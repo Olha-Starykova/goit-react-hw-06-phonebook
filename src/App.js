@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import ContactForm from './components/ContactForm/ContactForm';
-
 import ContactList from './components/ContactList/ContactList';
-
-
-
 import Filter from './components/Filter/Filter';
-
 
 class App extends Component {
 
@@ -20,7 +15,7 @@ class App extends Component {
     ],
     filter: ''
   };
-
+//не перенесли меп
   addTodo = (name, number) => {
     const existingName = this.state.contacts.map(contact => contact.name).includes(name);
   
@@ -43,11 +38,11 @@ class App extends Component {
  
 
 //убираем елемент , чей id совпадает
-   deleteTodo = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
-  };
+  //  deleteTodo = contactId => {
+  //   this.setState(prevState => ({
+  //     contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+  //   }));
+  // };
   
    
   //получаем пропы с формы
@@ -75,10 +70,12 @@ class App extends Component {
       return (
         <div>
          <h1>Phonebook</h1>
-          <ContactForm onSubmit={this.addTodo} />
+          {/* <ContactForm onSubmit={this.addTodo} /> */}
+               <ContactForm />
           <h2>Contacts</h2>
-          <Filter filter={filter} onChange={ this.changeFilter}/>
-          <ContactList contacts={visibleTodos} onDeleteTodo={this.deleteTodo} />
+          {/* <Filter filter={filter} onChange={ this.changeFilter}/> */}
+          {/* <ContactList contacts={visibleTodos} onDeleteTodo={this.deleteTodo} /> */}
+            <ContactList  />
         </div>
       );
     }

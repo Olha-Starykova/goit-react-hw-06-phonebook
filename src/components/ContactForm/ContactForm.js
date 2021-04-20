@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
   //ставим npm i shortid
 import shortid from 'shortid';
 import './ContactForm.css'
+import { connect } from 'react-redux'
+import contactsActions from '../../redux/contacts/contacts-actions'
+
   
 
 class ContactForm extends Component {
@@ -77,8 +80,12 @@ class ContactForm extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    onSubmit: (name, number) => dispatch(contactsActions.addTodo(name, number)) 
+})
+
    ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default ContactForm;
+export default connect(null, mapDispatchToProps)(ContactForm);
