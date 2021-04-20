@@ -16,4 +16,9 @@ const deleteTodo = contactId => ({
     payload: contactId
 })
 
-export default {addTodo, deleteTodo}
+const changeFilter = value => ({
+    type: types.CHANGE_FILTER,
+    payload: value
+})
+
+export default {addTodo, deleteTodo, changeFilter}

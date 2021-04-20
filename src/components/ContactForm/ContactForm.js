@@ -29,7 +29,7 @@ class ContactForm extends Component {
         e.preventDefault();
       // console.log(this.state)
       //перекидываем данные в апп
-      this.props.onSubmit( this.state.name, this.state.number)
+       this.props.onSubmit( this.state.name, this.state.number)
       
         this.reset();
     };
