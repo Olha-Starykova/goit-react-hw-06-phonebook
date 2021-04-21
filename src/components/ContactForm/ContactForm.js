@@ -80,14 +80,6 @@ class ContactForm extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     const { filter, contacts } = state.contacts;
-//     const visibleTodos = getVisibleTodos(contacts, filter)
-//     return {
-//         contacts: visibleTodos,
-//     };
-// }
-
 const mapDispatchToProps = dispatch => ({
     onSubmit: (name, number) => dispatch(contactsActions.addTodo(name, number)) 
 })
