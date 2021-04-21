@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import shortid from 'shortid';
+import shortid from 'shortid';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
