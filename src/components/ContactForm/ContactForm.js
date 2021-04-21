@@ -50,7 +50,7 @@ class ContactForm extends Component {
               type="text"
               value={this.state.name}
               name="name"
-            //  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
               required
               id={this.nameInputId}
@@ -79,6 +79,14 @@ class ContactForm extends Component {
       );
     }
 }
+
+// const mapStateToProps = state => {
+//     const { filter, contacts } = state.contacts;
+//     const visibleTodos = getVisibleTodos(contacts, filter)
+//     return {
+//         contacts: visibleTodos,
+//     };
+// }
 
 const mapDispatchToProps = dispatch => ({
     onSubmit: (name, number) => dispatch(contactsActions.addTodo(name, number)) 
