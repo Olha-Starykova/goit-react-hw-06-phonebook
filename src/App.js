@@ -7,16 +7,16 @@ import Filter from './components/Filter/Filter';
 
 const App = () => (
 
-          <div>
-         <h1>Phonebook</h1>
+  <div>
+    <h1>Phonebook</h1>
         
-          <ContactForm />
-          <h2>Contacts</h2>
+    <ContactForm />
+    <h2>Contacts</h2>
         
-           <Filter />
+    <Filter />
      
-           <ContactList  />
-        </div>
+    <ContactList />
+  </div>
 
  
 );
