@@ -4,7 +4,7 @@ import './Filter.css'
 import { connect } from 'react-redux';
 import contactsActions from '../../redux/contacts/contacts-actions'
 
-//его стейт в арр
+
 
 const Filter = ({ filter, onChange }) => (
   <label className="label">

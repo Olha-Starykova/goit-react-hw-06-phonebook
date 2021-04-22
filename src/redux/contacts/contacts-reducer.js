@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-import types from './contacts-types'
+//import types from './contacts-types'
 import actions from './contacts-actions'
 import { createReducer } from '@reduxjs/toolkit';
 

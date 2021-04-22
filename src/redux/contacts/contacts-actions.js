@@ -35,4 +35,4 @@ const changeFilter = createAction('contacts/changeFilter')
 //     payload: value
 // })
 
-export default {addTodo, deleteTodo, changeFilter}
+export default { addTodo, deleteTodo, changeFilter };

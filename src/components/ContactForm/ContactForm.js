@@ -27,8 +27,10 @@ class ContactForm extends Component {
     //сабмит формы
     hendelSubmit = e => { 
         e.preventDefault();
-      // console.log(this.state)
-      //перекидываем данные в апп
+        if (this.props.contacts.map(({ name }) => name).includes(this.state.name)) {
+        alert(`${this.state.name} is already in contacts`)
+        return
+      }
        this.props.onSubmit( this.state.name, this.state.number)
       
         this.reset();
@@ -69,31 +71,29 @@ class ContactForm extends Component {
               required
             />
           </label>
-            
-                
+                            
           <button className="button" type='submit'>Add contacts</button>
       
         </form>
             
-           
       );
-    }
-}
+  };
+};
 
-// const mapStateToProps = state => {
-//     const { filter, contacts } = state.contacts;
-//     const visibleTodos = getVisibleTodos(contacts, filter)
-//     return {
-//         contacts: visibleTodos,
-//     };
-// }
-
-const mapDispatchToProps = dispatch => ({
-    onSubmit: (name, number) => dispatch(contactsActions.addTodo(name, number)) 
-})
 
    ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+
+const mapStateToProps = state => {
+ return {contacts: state.contacts.contacts}
+  }
+
+
+const mapDispatchToProps = dispatch => ({
+    onSubmit: (name, number) => dispatch(contactsActions.addTodo(name, number)) 
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
